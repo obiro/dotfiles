@@ -1,0 +1,21 @@
+[user]
+	name = o_biro
+	email = o_biro@nttr.co.jp
+[core]
+	editor = vim
+	pager = less -R
+	autoCRLF = false
+	safecrlf = true
+	whitespace = trailing-space,space-before-tab,-indent-with-non-tab,-cr-at-eol
+[color]
+	ui = auto
+[help]
+	autocorrect = 1
+[push]
+	default = simple
+[pager]
+	log = diff-highlight | less -R
+	show = diff-highlight | less -R
+	diff = diff-highlight | less -R
+[apply]
+	whitespace = fix

@@ -1,0 +1,49 @@
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias ls='ls -HF --color=auto' # これで"ls"コマンドに色がつく
+alias ll='ls -l'               # llでファイルサイズとかPermissionが見れ\
+alias la='ls -A'               # フォルダにある全ファイルを表示
+alias l='ls -CF'               # しらん
+alias less='less -rq'          # しらん
+alias grep='grep --color'      # grepでヒットした単語の表示色を変更
+
+
+##
+# docker
+#
+##
+
+# Getting the last container Id
+# example: echo `dl`
+alias dl="docker ps -l -q"
+
+# Getting the IP address
+# example: dip `dl`
+alias dip="docker inspect --format  '{{ .NetworkSettings.IPAddress }}' "
+
+# Stopping all containers
+# example: dstop
+dstop() { docker stop $(docker ps -a -q);}
+
+# Removing stop containers
+# example: drm
+drm() { docker rm $(docker ps -a -q); }
+
+# Removing unused images
+# example: drmi
+drmi() { docker rmi $(docker images -q); }
+
+# Building image
+# example: dbuild local/centos
+dbuild() { docker build -t=$1 .; }
+
+# Running container on interactive mode
+# example: dri base /bin/bash
+alias dri="docker run -i -t -P"
+
+# Running container on daemon mode
+# example: drd base /bin/echo hello
+alias drd="docker run -d -P"
+

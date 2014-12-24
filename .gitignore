@@ -1,0 +1,5 @@
+.vim/.netrwhist
+.vim/tmp/
+.vim/bundle/
+.vim/sessions/
+!.vim/bundle/.gitkeep
