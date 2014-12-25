@@ -1,0 +1,19 @@
+dotfiles
+========
+
+cd ~/
+git@github.com:obiro/dotfiles.git
+
+cd dotfiles
+sh symlink.sh
+
+cd install_script
+sh autoconf.sh
+sh lua.sh
+sh vim.sh
+sh git.sh
+sh bash-completion.sh
+sh pt.sh
+sh jq.sh
+
+exec $SHELL -l
