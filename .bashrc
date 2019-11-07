@@ -9,7 +9,6 @@ if [ -d $HOME/local/etc/profile.d ]; then
   GIT_PS1_DESCRIBE_STYLE="branch"
   GIT_PS1_SHOWCOLORHINTS=1
 
-  . $HOME/local/etc/profile.d/bash_completion.sh
   . $HOME/local/etc/profile.d/git-prompt.sh
   . $HOME/local/etc/profile.d/git-completion.bash
 

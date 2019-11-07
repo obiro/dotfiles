@@ -8,15 +8,18 @@
 # 2. Install the collection:
 #sudo yum install -y devtoolset-6
 
-cp ../../vim/bashrc_new $HOME/.bashrc
-cp ../../vim/vimrc_new $HOME/.vimrc
+cp ../.bashrc $HOME/.bashrc
+cp ../new/.vimrc $HOME/.vimrc
 
 mkdir -p $HOME/local/etc/profile.d
-mkdir -p $HOME/local/lib/bazel/bin/
-cp ../../vim/bash_completion.sh $HOME/local/etc/profile.d/bash_completion.sh
-sudo cp ../../vim/bazel-complete.bash $HOME/local/lib/bazel/bin/bazel-complete.bash
-cp ../../vim/git-prompt.sh $HOME/local/etc/profile.d/git-prompt.sh
-cp ../../vim/gitconfig $HOME/.gitconfig
+
+
+curl -k -L 'https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh' -o git-prompt.sh
+curl -k -L 'https://raw.github.com/git/git/master/contrib/completion/git-completion.bash' -o git-completion.bash
+
+mv git-prompt.sh  $HOME/local/etc/profile.d/git-prompt.sh
+mv git-completion.bash  $HOME/local/etc/profile.d/git-completion.bash
+#cp ../.gitconfig $HOME/.gitconfig
 
 source $HOME/.bashrc
 
