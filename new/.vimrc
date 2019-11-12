@@ -50,7 +50,8 @@ nmap <F10> :NERDTreeToggle<CR>
 " let g:airline#extensions#tabline#enabled = 1 " turn on buffer list
 let g:airline_theme = 'molokai'
 let g:airline_powerline_fonts = 1
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'unicode'
 set laststatus=2 " turn on bottom bar
 "set rtp+=/home1/irteamsu/.local/lib/python3.6/site-packages/powerline/bindings/vim/
 "set t_Co=256
@@ -60,7 +61,8 @@ set laststatus=2 " turn on bottom bar
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
+syntax on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -102,7 +104,7 @@ augroup END
 
 """"" encode & line
 "set termencoding=utf-8
-"set encoding=utf-8
+set encoding=utf-8
 "set fileencodings=utf-8,cp932,euc-jp,iso-2022-jp,default,latin,sjis,iso-8859-1
 set ffs=unix,dos
 
@@ -188,15 +190,13 @@ map <Leader>cc <plug>NERDComToggleComment
 map <Leader>c<space> <plug>NERDComComment
 
 " Number line bg color
-highlight LineNr ctermfg=grey ctermbg=black
+hi LineNr ctermfg=grey ctermbg=black
+
 " 背景を黒に
-"highlight Normal ctermfg=grey ctermbg=233
+"highlight Normal ctermfg=bg ctermbg=233
 
-
-noremap k h
-noremap l j
-noremap o k
-noremap ; l
+"comment color
+hi Comment ctermbg=Darkgray ctermfg=bg
 
 autocmd BufNewFile,BufRead *.nlu :setlocal filetype=nlu
 autocmd BufNewFile,BufRead *.nlu0 :setlocal filetype=nlu0
