@@ -81,6 +81,8 @@ set background=dark
 "hi link pythonComment Operator
 let g:gruvbox_italic=1
 hi pythonComment ctermfg=2 gui=bold guifg=#408010
+filetype plugin on
+syntax on
 
 " インサートモード時にバックスペースを使う
 set backspace=indent,eol,start
